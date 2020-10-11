@@ -24,4 +24,17 @@ if __name__ == "__main__":
 
     for filho in adair.filhos:
         print(f'O nome dos Filhos de {adair.nome} é {filho.nome}')
+
+    # este atributo sobrenome foi criado em tempo de execução
+    # veja que ele não está no metodo construtor __init__
+    adair.sobrenome = 'Correa'
+
+    # del serve para remover atributos em tempo de execução
+    # mesmo os que foram definido no metodo contrutor __init__
+    del adair.filhos 
+    
+    print(adair.__dict__) # __dict__ apresenta todos os atributos do objeto em um dicionario
+    print(plinio.__dict__)
+
+
     
