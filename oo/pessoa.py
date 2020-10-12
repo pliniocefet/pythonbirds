@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 class Pessoa:
+    # olhos é um atributo da classe Pessoa, como os atributos estaticos no Java
+    # são atributos que acompanham as instancias da classe
+    olhos = 2
     
     def __init__(self, *filhos, nome=None, idade=36):
         # argumentos com 1 asterisco '*' na frente significa que ele não é obrigatorio e também poderá ter mais que 1
@@ -35,6 +38,8 @@ if __name__ == "__main__":
     
     print(adair.__dict__) # __dict__ apresenta todos os atributos do objeto em um dicionario
     print(plinio.__dict__)
+    print(Pessoa.olhos) # acessando atributo da classe ou atributo default
+    print(plinio.olhos) # acessando atributo da classe ou atributo default pela instancia da classe
 
-
+    print(id(Pessoa.olhos), id(plinio.olhos))
     
