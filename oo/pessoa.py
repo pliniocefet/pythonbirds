@@ -15,6 +15,17 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        # metodo estatico não recebe seld (o objeto da classe)
+        # porque é um metodo da classe e por isso estatico
+        # pode ser acessado pelas instancias da classe também
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
 if __name__ == "__main__":
     plinio = Pessoa(nome='Plinio')
     rafael = Pessoa(nome='Rafael')
@@ -42,4 +53,11 @@ if __name__ == "__main__":
     print(plinio.olhos) # acessando atributo da classe ou atributo default pela instancia da classe
 
     print(id(Pessoa.olhos), id(plinio.olhos))
+    # Acessando o metodo da classe com a classe Pessoa
+    # Acessando o metodo da classe com a instancia de Pessoa
+    print(Pessoa.metodo_estatico(), plinio.metodo_estatico())
+
+    # Acessando atributos de classe com a classe Pessoa por metodos de classe
+    # Acessando atributos de classe com a instancia de Pessoa por metodos de classe
+    print(Pessoa.nome_e_atributos_de_classe(), plinio.nome_e_atributos_de_classe())
     
