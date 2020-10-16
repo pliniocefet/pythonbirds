@@ -13,7 +13,7 @@ class Pessoa:
        self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def metodo_estatico():
@@ -27,11 +27,16 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe_pai = super().cumprimentar() # utilizando o metodo cumprimentar da classe pai sem sobrescrever o metodo e  sim complementando
+        return f'{cumprimentar_da_classe_pai}, Aperto de mão'
+
+class Mutante(Pessoa):
+    olhos = 3
 
 if __name__ == "__main__":
     plinio = Homem(nome='Plinio')
-    rafael = Homem(nome='Rafael')
+    rafael = Mutante(nome='Rafael')
     adair = Pessoa(rafael, plinio, nome='Adair')
     print(adair.cumprimentar())
     print(id(adair))
@@ -63,4 +68,5 @@ if __name__ == "__main__":
     # Acessando atributos de classe com a classe Pessoa por metodos de classe
     # Acessando atributos de classe com a instancia de Pessoa por metodos de classe
     print(Pessoa.nome_e_atributos_de_classe(), plinio.nome_e_atributos_de_classe())
-    
+    print(plinio.olhos)
+    print(plinio.cumprimentar())

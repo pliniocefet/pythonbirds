@@ -94,6 +94,8 @@ Oes    Les
    'Oeste'
 
 """
+
+
 class Carro:
 
     def __init__(self, direcao, motor):
@@ -124,6 +126,7 @@ SUL = 'Sul'
 LESTE = 'Leste'
 OESTE = 'Oeste'
 
+
 class Direcao:
     
     rotacao_a_direita_dict = {NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE}
@@ -146,7 +149,6 @@ class Direcao:
         else:
             self.valor = NORTE
         """
-
 
     def girar_a_esquerda(self):
         # Ocodigo abaixo faz a mesma coisa que a implementação com if e elif abaixo comentado
